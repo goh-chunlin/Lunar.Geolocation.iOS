@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		037B8CB2D64C7AE19CA768FB /* libPods-geolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A01D203AD8CF1B09C5A9D19D /* libPods-geolocation.a */; };
+		D7461AD8246019C300700621 /* apikey.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7461AD7246019C300700621 /* apikey.plist */; };
 		D7846676245FF39900FD1142 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7846675245FF39900FD1142 /* AppDelegate.swift */; };
 		D7846678245FF39900FD1142 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7846677245FF39900FD1142 /* SceneDelegate.swift */; };
 		D784667A245FF39900FD1142 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7846679245FF39900FD1142 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 		7D6ED6404C35FCA4FF3203FC /* Pods-geolocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-geolocation.release.xcconfig"; path = "Target Support Files/Pods-geolocation/Pods-geolocation.release.xcconfig"; sourceTree = "<group>"; };
 		8BC717E286D1DCD0CBAADB7A /* Pods-geolocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-geolocation.debug.xcconfig"; path = "Target Support Files/Pods-geolocation/Pods-geolocation.debug.xcconfig"; sourceTree = "<group>"; };
 		A01D203AD8CF1B09C5A9D19D /* libPods-geolocation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-geolocation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7461AD7246019C300700621 /* apikey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = apikey.plist; sourceTree = "<group>"; };
 		D7846672245FF39900FD1142 /* geolocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geolocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7846675245FF39900FD1142 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7846677245FF39900FD1142 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,13 +50,13 @@
 				8BC717E286D1DCD0CBAADB7A /* Pods-geolocation.debug.xcconfig */,
 				7D6ED6404C35FCA4FF3203FC /* Pods-geolocation.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		D7846669245FF39900FD1142 = {
 			isa = PBXGroup;
 			children = (
+				D7461AD7246019C300700621 /* apikey.plist */,
 				D7846674245FF39900FD1142 /* geolocation */,
 				D7846673245FF39900FD1142 /* Products */,
 				726463F522E7C6EF3DCD10AA /* Pods */,
@@ -153,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7846682245FF39E00FD1142 /* LaunchScreen.storyboard in Resources */,
+				D7461AD8246019C300700621 /* apikey.plist in Resources */,
 				D784667F245FF39E00FD1142 /* Assets.xcassets in Resources */,
 				D784667D245FF39900FD1142 /* Main.storyboard in Resources */,
 			);
