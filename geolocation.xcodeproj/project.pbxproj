@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		037B8CB2D64C7AE19CA768FB /* libPods-geolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A01D203AD8CF1B09C5A9D19D /* libPods-geolocation.a */; };
 		D7846676245FF39900FD1142 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7846675245FF39900FD1142 /* AppDelegate.swift */; };
 		D7846678245FF39900FD1142 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7846677245FF39900FD1142 /* SceneDelegate.swift */; };
 		D784667A245FF39900FD1142 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7846679245FF39900FD1142 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D6ED6404C35FCA4FF3203FC /* Pods-geolocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-geolocation.release.xcconfig"; path = "Target Support Files/Pods-geolocation/Pods-geolocation.release.xcconfig"; sourceTree = "<group>"; };
+		8BC717E286D1DCD0CBAADB7A /* Pods-geolocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-geolocation.debug.xcconfig"; path = "Target Support Files/Pods-geolocation/Pods-geolocation.debug.xcconfig"; sourceTree = "<group>"; };
+		A01D203AD8CF1B09C5A9D19D /* libPods-geolocation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-geolocation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7846672245FF39900FD1142 /* geolocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geolocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7846675245FF39900FD1142 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7846677245FF39900FD1142 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				037B8CB2D64C7AE19CA768FB /* libPods-geolocation.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		726463F522E7C6EF3DCD10AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8BC717E286D1DCD0CBAADB7A /* Pods-geolocation.debug.xcconfig */,
+				7D6ED6404C35FCA4FF3203FC /* Pods-geolocation.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D7846669245FF39900FD1142 = {
 			isa = PBXGroup;
 			children = (
 				D7846674245FF39900FD1142 /* geolocation */,
 				D7846673245FF39900FD1142 /* Products */,
+				726463F522E7C6EF3DCD10AA /* Pods */,
+				E05AA37CA54CB05996EFB3A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = geolocation;
 			sourceTree = "<group>";
 		};
+		E05AA37CA54CB05996EFB3A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A01D203AD8CF1B09C5A9D19D /* libPods-geolocation.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7846686245FF39E00FD1142 /* Build configuration list for PBXNativeTarget "geolocation" */;
 			buildPhases = (
+				7D14904D4E212F05C9C77C06 /* [CP] Check Pods Manifest.lock */,
 				D784666E245FF39900FD1142 /* Sources */,
 				D784666F245FF39900FD1142 /* Frameworks */,
 				D7846670245FF39900FD1142 /* Resources */,
+				2CB5ED2A54F8C32F8E28615E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CB5ED2A54F8C32F8E28615E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-geolocation/Pods-geolocation-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-geolocation/Pods-geolocation-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-geolocation/Pods-geolocation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D14904D4E212F05C9C77C06 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-geolocation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D784666E245FF39900FD1142 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		D7846687245FF39E00FD1142 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BC717E286D1DCD0CBAADB7A /* Pods-geolocation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +369,7 @@
 		};
 		D7846688245FF39E00FD1142 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D6ED6404C35FCA4FF3203FC /* Pods-geolocation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
