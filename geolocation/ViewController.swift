@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GMSMapViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         
         let camera = GMSCameraPosition.camera(withLatitude: singaporeLatitude, longitude: singaporeLongitude, zoom: mapZoomLevel)
         let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+        mapView.delegate = self
         self.view.addSubview(mapView)
 
         // Creates a marker in the center of the map.
@@ -29,6 +30,16 @@ class ViewController: UIViewController {
         marker.snippet = "Singapore"
         marker.map = mapView
     }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+
+        let marker = GMSMarker(position: coordinate)
+        marker.title = "Coordinate: \(coordinate.latitude.round(to: 4)),\(coordinate.longitude.round(to: 4))"
+        marker.map = mapView
+
+    }
+    
+    
 
 
 }
