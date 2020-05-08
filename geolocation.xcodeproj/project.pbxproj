@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		037B8CB2D64C7AE19CA768FB /* libPods-geolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A01D203AD8CF1B09C5A9D19D /* libPods-geolocation.a */; };
+		D739A7A924650E0300637E2B /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = D739A7A824650E0300637E2B /* Json.swift */; };
+		D739A7AB2465108A00637E2B /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D739A7AA2465108A00637E2B /* ApiKey.swift */; };
 		D7461AD8246019C300700621 /* apikey.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7461AD7246019C300700621 /* apikey.plist */; };
 		D7846676245FF39900FD1142 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7846675245FF39900FD1142 /* AppDelegate.swift */; };
 		D7846678245FF39900FD1142 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7846677245FF39900FD1142 /* SceneDelegate.swift */; };
@@ -16,12 +18,15 @@
 		D784667F245FF39E00FD1142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D784667E245FF39E00FD1142 /* Assets.xcassets */; };
 		D7846682245FF39E00FD1142 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7846680245FF39E00FD1142 /* LaunchScreen.storyboard */; };
 		D792B7D42462F618009E9EA4 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D792B7D32462F618009E9EA4 /* DoubleExtension.swift */; };
+		D792B7D62463FBDA009E9EA4 /* EventHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D792B7D52463FBDA009E9EA4 /* EventHub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D6ED6404C35FCA4FF3203FC /* Pods-geolocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-geolocation.release.xcconfig"; path = "Target Support Files/Pods-geolocation/Pods-geolocation.release.xcconfig"; sourceTree = "<group>"; };
 		8BC717E286D1DCD0CBAADB7A /* Pods-geolocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-geolocation.debug.xcconfig"; path = "Target Support Files/Pods-geolocation/Pods-geolocation.debug.xcconfig"; sourceTree = "<group>"; };
 		A01D203AD8CF1B09C5A9D19D /* libPods-geolocation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-geolocation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D739A7A824650E0300637E2B /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
+		D739A7AA2465108A00637E2B /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		D7461AD7246019C300700621 /* apikey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = apikey.plist; sourceTree = "<group>"; };
 		D7846672245FF39900FD1142 /* geolocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geolocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7846675245FF39900FD1142 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +37,7 @@
 		D7846681245FF39E00FD1142 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7846683245FF39E00FD1142 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D792B7D32462F618009E9EA4 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		D792B7D52463FBDA009E9EA4 /* EventHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +86,14 @@
 				D7846675245FF39900FD1142 /* AppDelegate.swift */,
 				D7846677245FF39900FD1142 /* SceneDelegate.swift */,
 				D7846679245FF39900FD1142 /* ViewController.swift */,
+				D792B7D52463FBDA009E9EA4 /* EventHub.swift */,
+				D739A7AA2465108A00637E2B /* ApiKey.swift */,
 				D792B7D32462F618009E9EA4 /* DoubleExtension.swift */,
 				D784667B245FF39900FD1142 /* Main.storyboard */,
 				D784667E245FF39E00FD1142 /* Assets.xcassets */,
 				D7846680245FF39E00FD1142 /* LaunchScreen.storyboard */,
 				D7846683245FF39E00FD1142 /* Info.plist */,
+				D739A7A824650E0300637E2B /* Json.swift */,
 			);
 			path = geolocation;
 			sourceTree = "<group>";
@@ -214,7 +223,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D792B7D42462F618009E9EA4 /* DoubleExtension.swift in Sources */,
+				D792B7D62463FBDA009E9EA4 /* EventHub.swift in Sources */,
 				D784667A245FF39900FD1142 /* ViewController.swift in Sources */,
+				D739A7A924650E0300637E2B /* Json.swift in Sources */,
+				D739A7AB2465108A00637E2B /* ApiKey.swift in Sources */,
 				D7846676245FF39900FD1142 /* AppDelegate.swift in Sources */,
 				D7846678245FF39900FD1142 /* SceneDelegate.swift in Sources */,
 			);

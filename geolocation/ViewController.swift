@@ -10,6 +10,9 @@ import UIKit
 import GoogleMaps
 
 class ViewController: UIViewController, GMSMapViewDelegate {
+    
+    var coordinates: [[String : Double]] = []
+    var coordinateMessages: [[String : String]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,22 @@ class ViewController: UIViewController, GMSMapViewDelegate {
         let marker = GMSMarker(position: coordinate)
         marker.title = "Coordinate: \(coordinate.latitude.round(to: 4)),\(coordinate.longitude.round(to: 4))"
         marker.map = mapView
+        
+        let coordinate = [
+            "Latitude" : coordinate.latitude,
+            "Longitude": coordinate.longitude
+        ]
+        
+        coordinates.append(coordinate)
+        
+        coordinateMessages.append(["Body": "\(Json.stringify(json: coordinate))"])
+        
+        if (coordinates.count >= 10) {
+            EventHub.postEvent(data: coordinateMessages)
+            
+            coordinates.removeAll()
+            coordinateMessages.removeAll()
+        }
 
     }
     

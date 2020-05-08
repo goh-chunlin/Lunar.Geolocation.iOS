@@ -4,4 +4,5 @@ platform :ios, '13.4'
 target 'geolocation' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'Alamofire'
 end
