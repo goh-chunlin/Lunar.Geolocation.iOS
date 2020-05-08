@@ -11,6 +11,7 @@ import Alamofire
 
 
 class EventHub {
+    static var eventHubKey = ""
     
     class func serizalizeDataForBatchPosting(data: [[String : Double]]) -> [[String : String]] {
         var arr = [[String : String]]()
@@ -24,7 +25,7 @@ class EventHub {
     
     class func postEvent(data: [[String : String]]) {
         let eventHubName = NSURL(string: ApiKey.GetApiKey(key: "AzureEventHubEndpoint")!)!
-        let eventHubKey = ApiKey.GetApiKey(key: "AzureEventHubSasToken")!
+        let azureSasTokenGeneratorUrl = ApiKey.GetApiKey(key: "SasTokenGeneratorUrl")!
         
         let urlString = "\(eventHubName)/messages"
         let json = Json.stringify(json: data)
@@ -47,13 +48,39 @@ class EventHub {
         Alamofire.request(request).responseString {
             (response) in
             
-            switch response.result {
-                case .success:
-                    print(response)
-                    break
+            let statusCode = response.response?.statusCode
+            print(statusCode ?? "-")
+            
+            if statusCode == 401 {
+                
+                var sasTokenRequest = URLRequest(url: URL(string: azureSasTokenGeneratorUrl)!)
+                sasTokenRequest.httpMethod = HTTPMethod.post.rawValue
+                
+                Alamofire.request(sasTokenRequest).responseString {
+                    (sasTokenResponse) in
+                    
+                    let sasTokenStatusCode = sasTokenResponse.response?.statusCode
+                    
+                    if sasTokenStatusCode == 200 {
+                        eventHubKey = sasTokenResponse.result.value!
+                        
+                        postEvent(data: data)
+                    } else {
+                        print("ERROR: We cannot get the SAS token.")
+                    }
+                }
+                
+            } else {
+                
+                switch response.result {
+                    case .success:
+                        print(response)
+                        break
 
-                case .failure(let error):
-                    print(error)
+                    case .failure(let error):
+                        print(error)
+                }
+                
             }
         }
     }
