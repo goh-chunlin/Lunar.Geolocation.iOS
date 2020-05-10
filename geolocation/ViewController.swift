@@ -11,7 +11,7 @@ import GoogleMaps
 
 class ViewController: UIViewController, GMSMapViewDelegate {
     
-    var coordinates: [[String : Double]] = []
+    var coordinates: [[String : Any]] = []
     var coordinateMessages: [[String : String]] = []
 
     override func viewDidLoad() {
@@ -41,9 +41,10 @@ class ViewController: UIViewController, GMSMapViewDelegate {
         marker.map = mapView
         
         let coordinate = [
+            "DeviceLabel": "iOS Data",
             "Latitude" : coordinate.latitude,
             "Longitude": coordinate.longitude
-        ]
+            ] as [String : Any]
         
         coordinates.append(coordinate)
         
